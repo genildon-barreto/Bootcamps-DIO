@@ -7,3 +7,39 @@ body{
   flex-direction: column;
   color: darkgreen;
 }
+
+h3 {
+  color: black;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+}
+
+button {
+  box-sizing:border-box;
+  justify-content: center;
+  /*flex: auto;*/
+  background-color: transparent;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 270px;
+  border: 1px solid black;
+  max-width: 350px;
+  width:66.6666666667%
+}
+
+.ud {
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 350px;
+}
+
+.lr {
+  flex-direction: row;
+  width: 175px;
+}

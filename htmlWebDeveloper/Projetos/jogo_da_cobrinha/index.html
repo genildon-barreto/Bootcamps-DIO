@@ -11,8 +11,23 @@
 
   <body>
     <h1>Jogo da Cobrinha</h1>
+    <h3>Pontuação : <span id="points">0</span></h3>
     <canvas id="snake" width="512" height="512">
     </canvas><script defer src="./js/script.js"></script>
+    <div class="container">
+    <button class="ud" type="button" onclick="btnSelector()" id="up"> 
+      <img src="./img/caret-square-up-regular.svg" width="10" height="10" alt="cima">
+    </button>
+    <button class="lr" type="button" onclick="btnSelector()" id="left">
+      <img src="./img/caret-square-left-regular.svg" width="10" height="10" alt="left">
+    </button>
+    <button class="lr" type="button" onclick="btnSelector()" id="right">
+      <img src="./img/caret-square-right-regular.svg" width="10" height="10" alt="right">
+    </button>
+    <button class="ud" type="button" onclick="btnSelector()" id="down"> 
+      <img src="./img/caret-square-down-regular.svg" width="10" height="10" alt="down"> 
+    </button>
+    </div>
   </body>
 
 </html>

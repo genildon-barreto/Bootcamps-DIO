@@ -12,6 +12,7 @@ let food = {
   y: Math.floor(Math.random() * 15 + 1) * box
 }
 
+//var btnPause = document.getElementById("btnPause")
 
 function criarBG() {
   context.fillStyle = "lightgreen";
@@ -21,7 +22,7 @@ function criarBG() {
 function criarCobrinha() {
   for(i=0; i < snake.length; i++)  {
     context.fillStyle = "yellow";
-    context.fillRect(snake[i].x, snake[i].y, box, box);
+    context.fillRect(snake[i].x, snake[i].y, box-2, box-2);
   }
 }
 
@@ -37,6 +38,14 @@ function update (event) {
   if (event.keyCode == 38 && direction != 'down') direction = 'up';
   if (event.keyCode == 39 && direction != 'left') direction = 'right';
   if (event.keyCode == 40 && direction != 'up') direction = 'down';
+}
+
+function btnSelector(){
+   
+    if(event.srcElement.id == 'left' && direction != 'right') direction = 'left';
+    if(event.srcElement.id == 'up' && direction != 'down') direction = 'up';
+    if(event.srcElement.id == 'right' && direction != 'left') direction = 'right';
+    if(event.srcElement.id == 'down' && direction != 'up') direction = 'down';
 }
 
 
@@ -58,6 +67,9 @@ function iniciarJogo() {
   criarCobrinha();
   drawFood();
   
+  //btnPause.innerHTML = "Pausar";
+  //btnPause.disable = false;
+  
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
   
@@ -66,13 +78,18 @@ function iniciarJogo() {
   if(direction == "up") snakeY -= box;
   if(direction == "down") snakeY += box;
   
+  let points = parseInt(document.getElementById("points").innerText);
+  
   if(snakeX != food.x || snakeY != food.y) {
     snake.pop();
   }
   else {
     food.x = Math.floor(Math.random() * 15 + 1) * box;
     food.y = Math.floor(Math.random() * 15 + 1) * box;
+    points +=10;
   }
+  
+  document.getElementById("points").innerHTML = points;
   
   let newHead = {
     x: snakeX,
