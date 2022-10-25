@@ -21,7 +21,6 @@ public class Usuario {
       smartTv.aumentarCanaL();
       smartTv.aumentarCanaL();  
       smartTv.mudarCanal(50);
-      System.out.println("Canal Atual : " + smartTv.canal);
 
 
 }
